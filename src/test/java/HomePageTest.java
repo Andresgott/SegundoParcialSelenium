@@ -19,19 +19,9 @@ public class HomePageTest extends BaseTest
     @Test
     public void orderingFilterZtoATest()
     {
-        WebElement userNameTextBox = new WebDriverWait(driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#user-name")));
-        userNameTextBox.sendKeys("standard_user");
-
-        WebElement passwordTextBox = new WebDriverWait(driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
-        passwordTextBox.sendKeys("secret_sauce");
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        loginButton.click();
 
         WebElement sortComboBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"inventory_filter_container\"]/select")));
 
         Select selectObject = new Select(sortComboBox);
         selectObject.selectByVisibleText("Name (Z to A)");
@@ -56,19 +46,9 @@ public class HomePageTest extends BaseTest
     @Test
     public void orderingFilterAtoZTest()
     {
-        WebElement userNameTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#user-name")));
-        userNameTextBox.sendKeys("standard_user");
-
-        WebElement passwordTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
-        passwordTextBox.sendKeys("secret_sauce");
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        loginButton.click();
 
         WebElement sortComboBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"inventory_filter_container\"]/select")));
 
         Select selectObject = new Select(sortComboBox);
         selectObject.selectByVisibleText("Name (A to Z)");
@@ -93,16 +73,6 @@ public class HomePageTest extends BaseTest
     @Test
     public void orderingFilterLowtoHighTest()
     {
-        WebElement userNameTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#user-name")));
-        userNameTextBox.sendKeys("standard_user");
-
-        WebElement passwordTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
-        passwordTextBox.sendKeys("secret_sauce");
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        loginButton.click();
 
         WebElement sortComboBox = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
@@ -129,16 +99,7 @@ public class HomePageTest extends BaseTest
     @Test
     public void orderingFilterHightoLowTest()
     {
-        WebElement userNameTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#user-name")));
-        userNameTextBox.sendKeys("standard_user");
 
-        WebElement passwordTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
-        passwordTextBox.sendKeys("secret_sauce");
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        loginButton.click();
 
         WebElement sortComboBox = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
@@ -166,16 +127,6 @@ public class HomePageTest extends BaseTest
     @Test
     public void addToCartButtons()
     {
-        WebElement userNameTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#user-name")));
-        userNameTextBox.sendKeys("standard_user");
-
-        WebElement passwordTextBox = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#password")));
-        passwordTextBox.sendKeys("secret_sauce");
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-button\"]"));
-        loginButton.click();
 
         List<WebElement> buttons = driver.findElements(By.className("btn_primary"));
 
